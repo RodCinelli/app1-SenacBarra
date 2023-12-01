@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  user={
+    userName:'root',
+    password:'123456'
+  }
   public produtos=[
     { 
         id: 1, 
@@ -39,6 +43,12 @@ export class HomePage {
         miniDescricao:"Dê o seu melhor nas quadras de Tênis com esse novo Tênis Adidas Barricade Feminino.",
         imagem:"https://static.netshoes.com.br/produtos/tenis-adidas-barricade-feminino/24/FB8-0035-024/FB8-0035-024_zoom1.jpg" 
     },
-]
+] 
+  logado:boolean=false
+  fazerLogin(user:any, pass:any){
+    if(this.user.userName===user && this.user.password===pass){
+      this.logado=true
+    }
+  }
   constructor() {}
 }

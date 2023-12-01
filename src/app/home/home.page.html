@@ -1,4 +1,24 @@
 <ion-content>
-  <app-card *ngFor="let produto of produtos" imagem={{produto.imagem}} subTitulo={{produto.produto}} titulo={{produto.preco}} conteudo={{produto.miniDescricao}} botao="comprar" 
-  />
+  <ion-card *nginf="!logado">
+    <ion-card-header>
+      <ion-card-title>Login</ion-card-title>
+      <ion-card-subtitle>Entre com seu nome de usuário e senha</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-input label="UserName" #user></ion-input>
+        </ion-item>
+        <ion-list>
+          <ion-item>
+            <ion-input label="Password" #pass></ion-input>
+          </ion-item>
+          <ion-button expand="block" (click)="fazerLogin(user.value,pass.value)">entrar</ion-button>
+        </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <div *nginf="logado">
+    <app-card *ngFor="let produto of produtos" imagem={{produto.imagem}} subTitulo={{produto.produto}}
+      titulo={{produto.preco}} conteudo={{produto.miniDescricao}} botao="comprar" />
+  </div>
 </ion-content>
