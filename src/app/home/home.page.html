@@ -1,4 +1,4 @@
 <ion-content>
-  <app-card imagem={{produto.imagem}} subTitulo={{produto.produto}} titulo={{produto.preco}} conteudo={{produto.miniDescricao}} botao="comprar" 
+  <app-card *ngFor="let produto of produtos" imagem={{produto.imagem}} subTitulo={{produto.produto}} titulo={{produto.preco}} conteudo={{produto.miniDescricao}} botao="comprar" 
   />
 </ion-content>
